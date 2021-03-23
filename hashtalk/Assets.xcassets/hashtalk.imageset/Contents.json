@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "speech-bubble.png",
       "idiom" : "universal"
     }
   ],
