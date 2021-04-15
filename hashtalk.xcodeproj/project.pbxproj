@@ -16,9 +16,12 @@
 		441131F5260924A2003D3D1D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441131F1260924A2003D3D1D /* RegisterViewController.swift */; };
 		441131FC260924BB003D3D1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441131FA260924BB003D3D1D /* Main.storyboard */; };
 		441132002609252E003D3D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 441131FF2609252D003D3D1D /* Assets.xcassets */; };
+		44A9FA0B2628C47E00349245 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44A9FA0A2628C47E00349245 /* GoogleService-Info.plist */; };
+		9E517FAAEE5E2AC99F61FD5A /* Pods_hashtalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93722F1182DC8F9D44D35155 /* Pods_hashtalk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06FFF7B9E674281E070CFE46 /* Pods-hashtalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hashtalk.release.xcconfig"; path = "Target Support Files/Pods-hashtalk/Pods-hashtalk.release.xcconfig"; sourceTree = "<group>"; };
 		441131D026092464003D3D1D /* Hashtalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hashtalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		441131D326092464003D3D1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		441131D526092464003D3D1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +33,9 @@
 		441131F1260924A2003D3D1D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		441131FB260924BB003D3D1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		441131FF2609252D003D3D1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		44A9FA0A2628C47E00349245 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93722F1182DC8F9D44D35155 /* Pods_hashtalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hashtalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC41BAC0279EC65F967E2C9C /* Pods-hashtalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hashtalk.debug.xcconfig"; path = "Target Support Files/Pods-hashtalk/Pods-hashtalk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E517FAAEE5E2AC99F61FD5A /* Pods_hashtalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,8 @@
 			children = (
 				441131D226092464003D3D1D /* hashtalk */,
 				441131D126092464003D3D1D /* Products */,
+				7DB9A91A1E183FB4FFD7FFD9 /* Pods */,
+				E34C4C4654898D7E22EB8B22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,13 +71,15 @@
 		441131D226092464003D3D1D /* hashtalk */ = {
 			isa = PBXGroup;
 			children = (
+				44A9FA0A2628C47E00349245 /* GoogleService-Info.plist */,
 				441131E126092465003D3D1D /* Info.plist */,
 				441131D326092464003D3D1D /* AppDelegate.swift */,
 				441131D526092464003D3D1D /* SceneDelegate.swift */,
 				441131FF2609252D003D3D1D /* Assets.xcassets */,
+				441131DE26092465003D3D1D /* LaunchScreen.storyboard */,
+				44A9FA032628B90D00349245 /* Models */,
 				441131F9260924BB003D3D1D /* Views */,
 				441131ED260924A2003D3D1D /* Controllers */,
-				441131DE26092465003D3D1D /* LaunchScreen.storyboard */,
 			);
 			path = hashtalk;
 			sourceTree = "<group>";
@@ -92,6 +103,30 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		44A9FA032628B90D00349245 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7DB9A91A1E183FB4FFD7FFD9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC41BAC0279EC65F967E2C9C /* Pods-hashtalk.debug.xcconfig */,
+				06FFF7B9E674281E070CFE46 /* Pods-hashtalk.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E34C4C4654898D7E22EB8B22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93722F1182DC8F9D44D35155 /* Pods_hashtalk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 441131E426092465003D3D1D /* Build configuration list for PBXNativeTarget "hashtalk" */;
 			buildPhases = (
+				1B0CB256E25F44EE699385E0 /* [CP] Check Pods Manifest.lock */,
 				441131CC26092464003D3D1D /* Sources */,
 				441131CD26092464003D3D1D /* Frameworks */,
 				441131CE26092464003D3D1D /* Resources */,
+				849AA1FB40D0623BF95628F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,12 +187,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				441131FC260924BB003D3D1D /* Main.storyboard in Resources */,
+				44A9FA0B2628C47E00349245 /* GoogleService-Info.plist in Resources */,
 				441132002609252E003D3D1D /* Assets.xcassets in Resources */,
 				441131E026092465003D3D1D /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B0CB256E25F44EE699385E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hashtalk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		849AA1FB40D0623BF95628F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hashtalk/Pods-hashtalk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hashtalk/Pods-hashtalk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hashtalk/Pods-hashtalk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		441131CC26092464003D3D1D /* Sources */ = {
@@ -311,11 +391,13 @@
 		};
 		441131E526092465003D3D1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC41BAC0279EC65F967E2C9C /* Pods-hashtalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JW7J4HUPGZ;
+				GCC_DYNAMIC_NO_PIC = YES;
 				INFOPLIST_FILE = hashtalk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -330,11 +412,13 @@
 		};
 		441131E626092465003D3D1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06FFF7B9E674281E070CFE46 /* Pods-hashtalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JW7J4HUPGZ;
+				GCC_DYNAMIC_NO_PIC = YES;
 				INFOPLIST_FILE = hashtalk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
