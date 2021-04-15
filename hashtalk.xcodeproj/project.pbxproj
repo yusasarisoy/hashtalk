@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -88,9 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				441131EE260924A2003D3D1D /* ChatViewController.swift */,
-				441131EF260924A2003D3D1D /* WelcomeViewController.swift */,
 				441131F0260924A2003D3D1D /* LoginViewController.swift */,
 				441131F1260924A2003D3D1D /* RegisterViewController.swift */,
+				441131EF260924A2003D3D1D /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
