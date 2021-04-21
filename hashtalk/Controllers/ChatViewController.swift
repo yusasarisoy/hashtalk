@@ -25,6 +25,7 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         title = Constants.appName // Set the title as app name.
         navigationItem.hidesBackButton = true // Hide the "Back" button.
+        tableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier) // Register the custom UITableViewCell.
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
@@ -46,9 +47,9 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath)
-        cell.textLabel?.text = messages[indexPath.row].body
-        cell.selectionStyle = .none
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! MessageCell
+        cell.labelMessage.text = messages[indexPath.row].body // Show the message body.
+        cell.selectionStyle = .none // Hide the highlight color of the UITableViewCell.
         return cell
     }
 }
