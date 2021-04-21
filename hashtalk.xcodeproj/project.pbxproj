@@ -16,6 +16,8 @@
 		441131F5260924A2003D3D1D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441131F1260924A2003D3D1D /* RegisterViewController.swift */; };
 		441131FC260924BB003D3D1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441131FA260924BB003D3D1D /* Main.storyboard */; };
 		441132002609252E003D3D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 441131FF2609252D003D3D1D /* Assets.xcassets */; };
+		444593BC2630A18900DE4F22 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444593BB2630A18900DE4F22 /* Message.swift */; };
+		44532A8F262CB37200BFDEA1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44532A8E262CB37200BFDEA1 /* Constants.swift */; };
 		44A9FA0B2628C47E00349245 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44A9FA0A2628C47E00349245 /* GoogleService-Info.plist */; };
 		9E517FAAEE5E2AC99F61FD5A /* Pods_hashtalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93722F1182DC8F9D44D35155 /* Pods_hashtalk.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +35,8 @@
 		441131F1260924A2003D3D1D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		441131FB260924BB003D3D1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		441131FF2609252D003D3D1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		444593BB2630A18900DE4F22 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		44532A8E262CB37200BFDEA1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		44A9FA0A2628C47E00349245 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93722F1182DC8F9D44D35155 /* Pods_hashtalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hashtalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC41BAC0279EC65F967E2C9C /* Pods-hashtalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hashtalk.debug.xcconfig"; path = "Target Support Files/Pods-hashtalk/Pods-hashtalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 				44A9FA032628B90D00349245 /* Models */,
 				441131F9260924BB003D3D1D /* Views */,
 				441131ED260924A2003D3D1D /* Controllers */,
+				444593B92630A0EA00DE4F22 /* Utilities */,
 			);
 			path = hashtalk;
 			sourceTree = "<group>";
@@ -103,9 +108,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		444593B92630A0EA00DE4F22 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				44532A8E262CB37200BFDEA1 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		44A9FA032628B90D00349245 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				444593BB2630A18900DE4F22 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,6 +260,8 @@
 				441131F5260924A2003D3D1D /* RegisterViewController.swift in Sources */,
 				441131F3260924A2003D3D1D /* WelcomeViewController.swift in Sources */,
 				441131D426092464003D3D1D /* AppDelegate.swift in Sources */,
+				44532A8F262CB37200BFDEA1 /* Constants.swift in Sources */,
+				444593BC2630A18900DE4F22 /* Message.swift in Sources */,
 				441131F2260924A2003D3D1D /* ChatViewController.swift in Sources */,
 				441131D626092464003D3D1D /* SceneDelegate.swift in Sources */,
 			);

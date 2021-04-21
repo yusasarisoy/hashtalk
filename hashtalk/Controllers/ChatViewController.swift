@@ -13,10 +13,17 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextfield: UITextField!
     
+    var messages: [Message] = [
+        Message(sender: "1@2.com", body: "Hey!"),
+        Message(sender: "a@b.com", body: "Hello!"),
+        Message(sender: "1@2.com", body: "What's up?")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Hashtalk" // Set the title as app name.
+        tableView.dataSource = self
+        title = Constants.appName // Set the title as app name.
         navigationItem.hidesBackButton = true // Hide the "Back" button.
     }
     
@@ -30,5 +37,18 @@ class ChatViewController: UIViewController {
         } catch let signOutError as NSError {
             print("Error while signing out %@:", signOutError)
         }
+    }
+}
+
+extension ChatViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath)
+        cell.textLabel?.text = messages[indexPath.row].body
+        cell.selectionStyle = .none
+        return cell
     }
 }

@@ -21,7 +21,7 @@ class WelcomeViewController: UIViewController {
     private func animateAppName() {
         titleLabel.text = ""
         var characterIndex = 0.0
-        let titleText = "Hashtalk"
+        let titleText = Constants.appName
         for letter in titleText {
             Timer.scheduledTimer(withTimeInterval: 0.1 * characterIndex, repeats: false) { _ in
                 self.titleLabel.text?.append(letter)
