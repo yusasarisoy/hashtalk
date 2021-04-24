@@ -15,11 +15,7 @@ class ChatViewController: UIViewController {
     
     let db = Firestore.firestore()
     
-    var messages: [Message] = [
-        Message(sender: "1@2.com", body: "Hey!"),
-        Message(sender: "a@b.com", body: "Hello!"),
-        Message(sender: "1@2.com", body: "What's up?")
-    ]
+    var messages: [Message] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +24,7 @@ class ChatViewController: UIViewController {
         title = Constants.appName // Set the title as app name.
         navigationItem.hidesBackButton = true // Hide the "Back" button.
         tableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier) // Register the custom UITableViewCell.
+        retrieveMessages() // This function provides to retrieve the messages from the Firestore.
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
@@ -44,6 +41,30 @@ class ChatViewController: UIViewController {
     }
     
     // MARK: - Helpers
+    
+    /// This function provides to retrieve the messages from the Firestore.
+    private func retrieveMessages() {
+        messages = [] // Make the messages array empty.
+        
+        db.collection(Constants.Firestore.collectionName).getDocuments { (querySnapshot, error) in // Make a query to load the message in the Firestore.
+            if let e = error {
+                print("The following error occurred while loading the message from the Firestore: \(e.localizedDescription)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data() // Get the message data.
+                        if let sender = data[Constants.Firestore.senderField] as? String, let body = data[Constants.Firestore.bodyField] as? String {
+                            let newMessage = Message(sender: sender, body: body) // Get the message sender and message.
+                            self.messages.append(newMessage) // Add the message to the messages array.
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData() // Reload the UITableView to display message.
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     /// This function provides to save the message to the Firestore.
     private func saveMessageToFirestore() {
