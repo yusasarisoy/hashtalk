@@ -44,12 +44,12 @@ class ChatViewController: UIViewController {
     
     /// This function provides to retrieve the messages from the Firestore.
     private func retrieveMessages() {
-        messages = [] // Make the messages array empty.
-        
-        db.collection(Constants.Firestore.collectionName).getDocuments { (querySnapshot, error) in // Make a query to load the message in the Firestore.
+        db.collection(Constants.Firestore.collectionName).addSnapshotListener { (querySnapshot, error) in // Make a query to load the messages from the Firestore for realtime.
+            self.messages = [] // Make the messages array empty.
             if let e = error {
                 print("The following error occurred while loading the message from the Firestore: \(e.localizedDescription)")
             } else {
+                
                 if let snapshotDocuments = querySnapshot?.documents {
                     for doc in snapshotDocuments {
                         let data = doc.data() // Get the message data.
