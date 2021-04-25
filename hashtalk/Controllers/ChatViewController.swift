@@ -44,26 +44,26 @@ class ChatViewController: UIViewController {
     
     /// This function provides to retrieve the messages from the Firestore.
     private func retrieveMessages() {
-        db.collection(Constants.Firestore.collectionName).addSnapshotListener { (querySnapshot, error) in // Make a query to load the messages from the Firestore for realtime.
-            self.messages = [] // Make the messages array empty.
-            if let e = error {
-                print("The following error occurred while loading the message from the Firestore: \(e.localizedDescription)")
-            } else {
-                
-                if let snapshotDocuments = querySnapshot?.documents {
-                    for doc in snapshotDocuments {
-                        let data = doc.data() // Get the message data.
-                        if let sender = data[Constants.Firestore.senderField] as? String, let body = data[Constants.Firestore.bodyField] as? String {
-                            let newMessage = Message(sender: sender, body: body) // Get the message sender and message.
-                            self.messages.append(newMessage) // Add the message to the messages array.
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData() // Reload the UITableView to display message.
+        db.collection(Constants.Firestore.collectionName).order(by: Constants.Firestore.dateField).addSnapshotListener { (querySnapshot, error) in // Make a query to load the messages from the Firestore for realtime.
+                self.messages = [] // Make the messages array empty.
+                if let e = error {
+                    print("The following error occurred while loading the message from the Firestore: \(e.localizedDescription)")
+                } else {
+                    
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        for doc in snapshotDocuments {
+                            let data = doc.data() // Get the message data.
+                            if let sender = data[Constants.Firestore.senderField] as? String, let body = data[Constants.Firestore.bodyField] as? String {
+                                let newMessage = Message(sender: sender, body: body) // Get the message sender and message.
+                                self.messages.append(newMessage) // Add the message to the messages array.
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData() // Reload the UITableView to display message.
+                                }
                             }
                         }
                     }
                 }
             }
-        }
     }
     
     /// This function provides to save the message to the Firestore.
@@ -71,11 +71,13 @@ class ChatViewController: UIViewController {
         if let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email { // Get the message and email of message sender.
             db.collection(Constants.Firestore.collectionName).addDocument(data: [
                 Constants.Firestore.senderField : messageSender,
-                Constants.Firestore.bodyField: messageBody
+                Constants.Firestore.bodyField: messageBody,
+                Constants.Firestore.dateField: Date().timeIntervalSince1970
             ]) { (error) in
                 if let e = error {
                     print("The following error occurred while saving data to the Firestore: \(e.localizedDescription)")
                 } else {
+                    self.messageTextfield.text?.removeAll() // Clear the UITextField.
                     print("Data has been saved successfully!")
                 }
             }
