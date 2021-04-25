@@ -17,6 +17,16 @@ class WelcomeViewController: UIViewController {
         animateAppName() // This function allows to animate the app name which is 'Hashtalk'.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     /// This function allows to animate the app name which is 'Hashtalk'.
     private func animateAppName() {
         titleLabel.text = ""
